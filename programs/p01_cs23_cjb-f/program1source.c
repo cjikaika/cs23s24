@@ -18,13 +18,15 @@ int maxSize(void) {
 void fillPrintRand(int randSets[][NUMSETS]) {
 
     int SIZE[] = {ASIZE, BSIZE};
+    char setLet = 'A';
     srand(time(NULL));
     
-    for (int i = 0; i < 2; i ++) {
+    for (int i = 0; i < NUMSETS; i ++) {
         for (int j = 0; j < SIZE[i]; j++) {
             randSets[j][i] = rand()%10 + 1;
-            printf("%d ",randSets[j][i]);
+            printf("%2d  ",randSets[j][i]);
         }
         printf("\n");
+        setLet++;
     }
 }
