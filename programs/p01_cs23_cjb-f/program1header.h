@@ -4,14 +4,8 @@
 // Author: CJ Bridgman-Ford
 // Email: cj.ikaika@gmail.com
 
-#ifndef PROGRAM1HEADER.H
-#define PROGRAM1HEADER.H
-
-// Function Prototypes
-
-int maxSize(void);
-int fillRand(int randSets[]);
-void printRand(int randSets[]);
+#ifndef PROGRAM1HEADER_H
+#define PROGRAM1HEADER_H
 
 // Definitions
 
@@ -19,4 +13,9 @@ void printRand(int randSets[]);
 #define ASIZE 5
 #define BSIZE 3
 
-#endif PROGRAM1HEADER.H
+// Function Prototypes
+
+int maxSize(void);
+void fillPrintRand(int randSets[][NUMSETS]);
+
+#endif // PROGRAM1HEADER_H

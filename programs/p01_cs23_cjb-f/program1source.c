@@ -6,7 +6,8 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-#include<program1header.h>
+#include<time.h>
+#include"program1header.h"
 
 
 int maxSize(void) {
@@ -14,17 +15,16 @@ int maxSize(void) {
     return maxSize;
 };
 
-int fillPrintRand(int randSets[]) {
+void fillPrintRand(int randSets[][NUMSETS]) {
 
     int SIZE[] = {ASIZE, BSIZE};
     srand(time(NULL));
     
     for (int i = 0; i < 2; i ++) {
         for (int j = 0; j < SIZE[i]; j++) {
-            randSets[i][&j] = rand()%10 + 1;
-            printf("%d ",randSets[i][&j]);
+            randSets[j][i] = rand()%10 + 1;
+            printf("%d ",randSets[j][i]);
         }
         printf("\n");
     }
-    
 }

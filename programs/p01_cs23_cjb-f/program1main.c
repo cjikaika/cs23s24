@@ -5,12 +5,11 @@
 // Email: cj.ikaika@gmail.com
 
 #include<stdio.h>
-#include<stdlib.h>
-#include<program1header.h>
+#include"program1header.h"
 
 int main(void){
 
-    int randSets[NUMSETS][maxSize()];
+    int randSets[maxSize()][NUMSETS];
     
     fillPrintRand(randSets);
 
