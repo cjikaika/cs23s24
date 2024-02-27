@@ -1,5 +1,5 @@
 // source.cpp
-// C++ Source File
+// C++ Source File for Program 1
 // CS23 Spring 2024 Assignment 1
 // Author: CJ Bridgman-Ford
 // Email: cj.ikaika@gmail.com
@@ -11,7 +11,7 @@
 int maxSize(void) {
     int maxSize = ASIZE > BSIZE ? ASIZE : BSIZE;
     return maxSize;
-};
+}
 
 void fillPrintRand(int randSets[][NUMSETS]) {
 

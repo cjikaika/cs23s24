@@ -4,8 +4,8 @@
 // Author: CJ Bridgman-Ford
 // Email: cj.ikaika@gmail.com
 
-#include<stdio.h>
-#include"program1header.h"
+#include<iostream>
+#include"header.h"
 
 int main(void){
 

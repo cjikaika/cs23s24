@@ -1,5 +1,5 @@
 // header.h
-// C++ Header File
+// C++ Header File for Program 1
 // CS23 Spring 2024 Assignment 1
 // Author: CJ Bridgman-Ford
 // Email: cj.ikaika@gmail.com
