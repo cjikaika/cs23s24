@@ -1,4 +1,4 @@
-// program1sets.c
+// program1main.c
 // C Main File
 // CS23 Spring 2024 Assignment 1
 // Author: CJ Bridgman-Ford
