@@ -15,10 +15,14 @@ int main(void){
 
     fillSetRand(A, ASIZE);
     fillSetRand(B, BSIZE);
-    printSet(A,"A");
-    printSet(B,"B");
-    printAsectB(A,B,"A - B");
-    printAsectB(B,A,"B - A");
-
+    printSet(A, "A");
+    printSet(B, "B");
+    printAsectB(A, B, "A - B");
+    printAsectB(B, A, "B - A");
+    printIsAsubsB(A, B, "A", "B");
+    printIsAsubsB(B, A, "B", "A");
+    printPofA(A,"A");
+    printPofA(B,"B");
+    
     return 0;
 }

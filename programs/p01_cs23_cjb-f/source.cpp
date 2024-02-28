@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <iostream>
 #include <set>
+#include <vector>
 #include "header.h"
 
 
@@ -37,17 +38,27 @@ void printAsectB(const std::set<int>& A, const std::set<int>& B, std::string set
 
     std::set_difference(A.begin(), A.end(), B.begin(), B.end(), 
         std::inserter(C, C.begin()));
-    
+
     printSet(C, setID);
 }
 
 
-void printAsubsB(const std::set<int>&){
+void printIsAsubsB(const std::set<int>& A, const std::set<int>& B, std::string idA, std::string idB){
+    bool isSub = std::includes(B.begin(), B.end(), A.begin(), A.end());
 
+    std::cout << idA << (isSub ? " is" : " is not") << " a subset of " << idB << ".\n";
 }
 
 
-void printPofA(const std::set<int>&) {
+void printPofA(const std::set<int>& set, std::string setID) {
+   
+    std::vector<int> vectoredSet(set.begin(),set.end());
+    int size = vectoredSet.size();
+    int pAsize = pow(2, size);
 
+    std::cout << "P(" << setID << ") = {";
+    for (int i = 0; i < pAsize; i++) {
+        std::cout << 
+    }
 
 }

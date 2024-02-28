@@ -21,7 +21,7 @@
 void fillSetRand(std::set<int>&, int);
 void printSet(const std::set<int>&, std::string);
 void printAsectB(const std::set<int>&, const std::set<int>&, std::string);
-void printAsubsB(const std::set<int>&);
-void printPofA(const std::set<int>&);
+void printIsAsubsB(const std::set<int>&, const std::set<int>&, std::string, std::string);
+void printPofA(const std::set<int>&, std::string);
 
 #endif // HEADER_H
