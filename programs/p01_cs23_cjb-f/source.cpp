@@ -11,12 +11,16 @@
 #include "header.h"
 
 
-void fillSetRand(std::set<int>& set, int SIZE) {
-    srand(time(NULL));
-    
-    for (int i = 0; i < SIZE; i ++) {
-        set.insert(rand()%10 + 1);
-    }
+void fillSets(std::set<int>& A, std::set<int>& B) {
+  int asize = 3+rand()%3;
+  int bsize = 1+rand()%3;
+
+  while(A.size() < asize) {
+    A.insert(1+rand()%10);
+  }
+  while(B.size() < bsize) {
+    B.insert(1+rand()%10);
+  }
 }
 
 
@@ -56,16 +60,16 @@ void printPofA(const std::set<int>& set, std::string setID) {
     int size = vectorSet.size();
     int pAsize = pow(2, size);
 
-    std::cout << "P(" << setID << ") = {";
+    std::cout << "P(" << setID << ") = { ";
     for (int i = 0; i < pAsize; i++) {
         std::cout << "{";
         for (int j = 0; j < size; j++) {
             if (i & (1 << j)) {
-                std::cout << " " << vectorSet[j] << ",";
+                std::cout << " " << vectorSet[j] << " ";
             }
         }
-        std::cout << "}";
+        std::cout << "} ";
     }
-    std::cout << "\n";
+    std::cout << "}\n";
 
 }

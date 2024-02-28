@@ -10,14 +10,9 @@
 #include <set>
 #include <string>
 
-// Definitions //
-
-#define NUMSETS 2
-#define ASIZE 5
-#define BSIZE 3
-
 // Function Prototypes //
 
+void fillSets(std::set<int>&, std::set<int>&);
 void fillSetRand(std::set<int>&, int);
 void printSet(const std::set<int>&, std::string);
 void printAsectB(const std::set<int>&, const std::set<int>&, std::string);

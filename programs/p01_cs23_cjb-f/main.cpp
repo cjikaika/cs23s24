@@ -6,15 +6,17 @@
 
 #include <iostream>
 #include <set>
+#include <ctime>
 #include "header.h"
 
 
 int main(void){
 
-    std::set<int> A, B;
+    srand(time(NULL));
 
-    fillSetRand(A, ASIZE);
-    fillSetRand(B, BSIZE);
+    std::set<int> A, B;
+    fillSets(A,B);
+
     std::cout << "\n";
     printSet(A, "A");
     printSet(B, "B");
@@ -26,6 +28,7 @@ int main(void){
     printIsAsubsB(B, A, "B", "A");
     std::cout << "\n";
     printPofA(A, "A");
+    std::cout << "\n";
     printPofA(B, "B");
     std::cout << "\n";
     
