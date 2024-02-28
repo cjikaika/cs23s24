@@ -15,14 +15,19 @@ int main(void){
 
     fillSetRand(A, ASIZE);
     fillSetRand(B, BSIZE);
+    std::cout << "\n";
     printSet(A, "A");
     printSet(B, "B");
+    std::cout << "\n";
     printAsectB(A, B, "A - B");
     printAsectB(B, A, "B - A");
+    std::cout << "\n";
     printIsAsubsB(A, B, "A", "B");
     printIsAsubsB(B, A, "B", "A");
-    printPofA(A,"A");
-    printPofA(B,"B");
+    std::cout << "\n";
+    printPofA(A, "A");
+    printPofA(B, "B");
+    std::cout << "\n";
     
     return 0;
 }

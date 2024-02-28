@@ -52,13 +52,20 @@ void printIsAsubsB(const std::set<int>& A, const std::set<int>& B, std::string i
 
 void printPofA(const std::set<int>& set, std::string setID) {
    
-    std::vector<int> vectoredSet(set.begin(),set.end());
-    int size = vectoredSet.size();
+    std::vector<int> vectorSet(set.begin(),set.end());
+    int size = vectorSet.size();
     int pAsize = pow(2, size);
 
     std::cout << "P(" << setID << ") = {";
     for (int i = 0; i < pAsize; i++) {
-        std::cout << 
+        std::cout << "{";
+        for (int j = 0; j < size; j++) {
+            if (i & (1 << j)) {
+                std::cout << " " << vectorSet[j] << ",";
+            }
+        }
+        std::cout << "}";
     }
+    std::cout << "\n";
 
 }
