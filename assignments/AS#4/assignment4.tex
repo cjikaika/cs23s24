@@ -41,27 +41,68 @@
 % Problem 1:
 \section{For your college interview, you must wear a tie.
  You own 3 regular (boring) ties and 5 (cool) bow ties.}
-\subsection{How many choices do you have for neckwear?}
+\subsection{How many choices do you have for neckwear?} 
+\hspace{1cm}\textit{Assuming you are wearing only one tie, that gives you $5+3$ options.
+ Therefore, the answer is 8.}
 \subsection{You realize that the interview is for clown college,
  so you should probably wear both a regular tie and a bow tie. How many choices do you have now?}
+ \hspace{1cm}\textit{For each of the $3$ regular ties, you have the option of $5$ different bow ties
+  to pick from. Therefore, the answer is $3 \times 5 = 15$.}
 \subsection{For the rest of your outfit, you have 5 shirts, 4 skirts, 3 pants, and 7 dresses.
  You want to select either a shirt to wear with a skirt or pants, or just a dress.
  How many outfits do you have to choose from?}
+\hspace{1cm}\textit{Let's start with the two piece outfit. You have $5$ shirts that can be paired
+ with a skirt or dress. Between the $4$ skirts and $3$ pants, that gives you $5\times(4+3)$ options.
+ However, our overall choice allows us to choose between a one or two piece outfit. This gives us a
+ total of $5\times(4+3)+7 = 42$ different outfits.}
+\clearpage
 
 % Problem 2:
 \section{Hexadecimal, or base 16, uses 16 distinct digits that can be used to form numbers:
-\\ {0,1,...,9,A,B,C,D,E,F}. So for example, \\ a 3 digit hexadecimal number might be 2B8.}
+\\ \{0,1,...,9,A,B,C,D,E,F\}. So for example, \\ a 3 digit hexadecimal number might be 2B8.}
 \subsection{How many 2-digit hexadecimals are there in which the first digit is E or F?
  Explain your answer in terms of the additive principle (using either events or sets).}
+\hspace{1cm}\textit{The additive property tells us that if $A$ occurs $m$ way, and $B$
+ occurs in $n$ disjoint ways, then the event $A$ or $B$ can occur in in $m+n$ different ways.
+ For both $E$ and $F$, there are $16$ different ways, respectively. Therefore, the total
+ possibilities is equal to $16+16=32$.}
 \subsection{Explain why your answer to the previous part is correct in terms of the
  multiplicative principle (using either events or sets).
  Why do both the additive and multiplicative principles give you the same answer?}
+\hspace{1cm}\textit{The multiplicative principle states that if $A$ can happen in $m$ ways and $B$
+ (when depends on the outcome of $A$) can happen in $n$ ways, the total possible outcomes is
+ $m\times n$. There are two possibilies for $A$ (E or F), and 16 possibilites for $B$. Therefore,
+ the total solutions is $2\times 16 = 32$. The answers between parts a and b are the same because
+ you are fundamentally calculating the same event, with two different perspectives on the
+ relationship between $A$ and $B$.}
 \subsection{How many 3-digit hexadecimals start with a letter (A-F) and end with a numeral (0-9)? Explain.}
+\hspace{1cm}\textit{Let's call the digits $A,B,C$ from left to right. Therefore, $A$ has $6$ possibilies (A-F),
+ $B$ has $16$ (0-F), and $C$ has $10$ (0-9). We can now use the multiplicative property: 
+ $6\times 16\times 10 = 960$ possibilies.}
+\clearpage
 \subsection{How many 3-digit hexadecimals start with a letter (A-F) or end with a numeral (0-9) (or both)? Explain.}
+\hspace{1cm}\textit{This question presents us with three cases. We can use our logic from part c to
+ analyze them:}
+\begin{center}
+    \begin{tabular}{c|c|c|c|c}
+        Case & A & B & C & Outcomes \\
+        \hline
+        1 & 6 & 16 & 16 & 1536 \\
+        \hline
+        2 & 6 & 16 & 10 & 940 \\
+        \hline
+        3 & 16 & 16 & 10 & 2560 \\
+        \hline
+    \end{tabular}
+\end{center}
+\hspace{1cm}\textit{By adding cases $1$ and $3$ and subtracting $2$, we get the total unique
+ possibilies: $1536+2560-940 = 3156$.}
 
 % Problem 3:
 \section{If $|M| = 100$ and $|N| = 42$, what is $|M\cup N|+|M\cap N|$?}
-
+\hspace{1cm}\textit{Using the formula $|M\cup N|=|M|+|N|-|M\cap N|$ we can isolate our knowns and unknown
+ on each side of the equation. This gives us $|M\cup N|+|M\cap N| = |M|+|N|$. So,$|M\cup N|+|M\cap N|$
+ is equivalent to $100+42 = 142$.}
 \clearpage
 
 % Problem 4:
