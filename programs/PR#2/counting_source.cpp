@@ -47,32 +47,33 @@ int read::mode(std::string line, int* argv) {
     }
 }
 
-unsigned long long calculate::choose(int n, int k) {
+unsigned long long calculate::choose(unsigned long long n, unsigned long long k) {
     if (k > n) {
         return 0;
     }   
 
-    int result = 1;
+    unsigned long long result = 1;
     
-    for (int i = 1; i <= k; ++i) {
-        result *= (n - i + 1)/i;
-        if (n < 0 || n >= ULLONG_MAX/2)
+    for (unsigned long long i = 1; i <= k; ++i) {
+        result *= (n - i + 1);
+        result /= i;
+        if (result == 0 || result > ULLONG_MAX*i/(n - i + 1))
             return -1;
     }
 
     return result;
 }
 
-unsigned long long calculate::permute(int n, int k) {
+unsigned long long calculate::permute(unsigned long long n, unsigned long long k) {
     if (k > n) {
         return 0;
     }
 
-    int result = 1;
+    unsigned long long result = 1;
     
-    for (int i = 1; i <= k; ++i) {
+    for (unsigned long long i = 1; i <= k; ++i) {
         result *= (n - i + 1);
-        if (n < 0 || n >= ULLONG_MAX/2)
+        if (result == 0 || result > ULLONG_MAX/(n - i + 1))
             return -1;
     }
 
@@ -99,5 +100,5 @@ std::string calculate::derangement(int n) {
 
     if (n >= 0 && n <= 23)
         return dtable[n];
-    return "Out of range. Please enter an integer input between 0 and 23";
+    return "Out of range. Please enter an integer input between 0 and 23!";
 }

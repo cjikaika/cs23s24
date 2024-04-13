@@ -19,7 +19,8 @@ int main() {
             case 1: {
                 output = calculate::choose(argv[0], argv[1]);
                 if (output == -1) {
-                    std::cerr << "Output out of range. Please enter smaller input values" << std::endl;
+                    std::cerr << "Output out of range. Please enter smaller input values!" << std::endl;
+                    break;
                 } else {
                     std::cout << argv[0] << " choose " << argv[1] << " = " << output << std::endl;
                     break;
@@ -28,7 +29,8 @@ int main() {
             case 2: {
                 output = calculate::permute(argv[0], argv[1]);
                 if (output == -1) {
-                    std::cerr << "Output out of range. Please enter smaller input values" << std::endl;
+                    std::cerr << "Output out of range. Please enter smaller input values!" << std::endl;
+                    break;
                 } else {
                     std::cout << argv[0] << " permute " << argv[1] << " = " << output << std::endl;
                     break;
@@ -36,19 +38,19 @@ int main() {
             }
             case 3: {
                 if (argv[0] < 0 || argv[0] > 20) {
-                    std::cerr << "Out of range. Please enter a value between 0 and 20" << std::endl;
+                    std::cerr << "Out of range. Please enter a value between 0 and 20!" << std::endl;
                     break;
                 } else {
                     std::cout << "rderangement " << argv[0] << " = " << calculate::rderangement(argv[0]) << std::endl;
+                    break;
                 }
-                break;
             }
             case 4: {
                 std::cout << "derangement " << argv[0] << " = " << calculate::derangement(argv[0]) << std::endl;
                 break;
             }
             default: {
-                std::cerr << "Please enter a valid set of input arguments" << std::endl;
+                std::cerr << "Please enter a valid set of input arguments!" << std::endl;
                 break;
             }
         }

@@ -11,8 +11,8 @@ namespace read {
 }
 
 namespace calculate {
-    unsigned long long choose(int, int);
-    unsigned long long permute(int, int);
+    unsigned long long choose(unsigned long long, unsigned long long);
+    unsigned long long permute(unsigned long long, unsigned long long);
     unsigned long long rderangement(unsigned long long);
     std::string derangement(int);
 }
