@@ -5,18 +5,22 @@
 // Email: cj.ikaika@gmail.com
 
 #include "counting_header.h"
+#include <climits>
 #include <ctype.h>
 #include <iostream>
 #include <sstream>
 #include <string>
 
-int mode(std::string line, int* argv) {
-    std::istringstream input(line);
+int read::mode(std::string line, int* argv) {
+    std::istringstream input(line), inputAlt(line);
     std::string operation;
     int n, k;
 
-    if (!(input >> n >> operation))
-        return -1;
+    if (!(input >> n >> operation)) {
+        if (!(inputAlt >> operation >> n)) {
+            return -1;
+        }
+    }
     
     if (operation == "choose") {
         if (input >> k) {
@@ -43,28 +47,24 @@ int mode(std::string line, int* argv) {
     }
 }
 
-int calculate::choose(int n, int k) {
-    if (n < 0 || n > 10000) {
-        std::cerr << "Out of range. Please enter a value between 0 and 10000" << std::endl;
-        exit;
-    } else if (k > n) {
+unsigned long long calculate::choose(int n, int k) {
+    if (k > n) {
         return 0;
     }   
 
     int result = 1;
     
     for (int i = 1; i <= k; ++i) {
-        result *= (n - 1 + i)/i;
+        result *= (n - i + 1)/i;
+        if (n < 0 || n >= ULLONG_MAX/2)
+            return -1;
     }
 
     return result;
 }
 
-int calculate::permute(int n, int k) {
-   if (n < 0 || n > 10000) {
-        std::cerr << "Out of range. Please enter a value between 0 and 10000" << std::endl;
-        exit;
-    } else if (k > n) {
+unsigned long long calculate::permute(int n, int k) {
+    if (k > n) {
         return 0;
     }
 
@@ -72,16 +72,20 @@ int calculate::permute(int n, int k) {
     
     for (int i = 1; i <= k; ++i) {
         result *= (n - i + 1);
+        if (n < 0 || n >= ULLONG_MAX/2)
+            return -1;
     }
 
     return result;
 }
 
-int calculate::rderangement(int n) { // change output and input size
+unsigned long long calculate::rderangement(unsigned long long n) {
     if (n == 0)
         return 1;
     else if (n == 1)
         return 0;
+    else if (n < 0 || n >= ULLONG_MAX/2)
+        return -1;
 
     return (n - 1) * (calculate::rderangement(n - 1) + calculate::rderangement(n - 2));
 }

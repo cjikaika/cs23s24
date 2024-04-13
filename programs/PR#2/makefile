@@ -3,7 +3,7 @@ MAIN = counting_main.cpp
 SRC = counting_source.cpp
 HEAD = counting_header.h
 CC = g++
-CFLAGS = -Wall -Wextra -pedantic
+CFLAGS = -Wall -pedantic -std=c++11
 OM = counting_main.o
 OS = counting_source.o
 OBJ = $(OM) $(OS)
