@@ -6,18 +6,13 @@
 
 #include <string>
 
-namespace tools {
-    void argprint(int, char *argv[]);
-}
-
 namespace read {
-    int mode(int, char *argv[]); // 1 = choose, 2 = permute, 3 = rederangement, 4 = derangement
+    int mode(std::string, int*); // 1 = choose, 2 = permute, 3 = rederangement, 4 = derangement
 }
 
 namespace calculate {
-    int factorial(int);
-    int choose(char*, char*);
-    int permute(char*, char*);
+    int choose(int, int);
+    int permute(int, int);
     int rderangement(int);
     std::string derangement(int);
 }

@@ -7,44 +7,41 @@
 #include "counting_header.h"
 #include <iostream>
 
-int main(int argc, char *argv[]) {
+int main() {
 
-    tools::argprint(argc, argv);
-
-    int intout = -1, n, mode = read::mode(argc, argv);
-    std::string strout = "";
-
-    switch (mode) {
-        case 1: 
-            {
-            intout = calculate::choose(argv[1], argv[3]);
-            break;
+    std::string line;
+    int argv[2], mode;
+    
+    while(getline(std::cin, line)) {
+        mode = read::mode(line, argv);
+        switch (mode) {
+            case 1: {
+                std::cout << calculate::choose(argv[0], argv[1]) << std::endl;
+                break;
             }
-        case 2:
-            {
-            intout = calculate::permute(argv[1], argv[3]);
-            break;
+            case 2: {
+                std::cout << calculate::permute(argv[0], argv[1]) << std::endl;
+                break;
             }
-        case 3:
-            {
-            n = std::stoi(argv[2]);
-            intout = calculate::rderangement(n);
-            break;
+            case 3: {
+                if (argv[0] < 0 || argv[0] > 15) {
+                    std::cerr << "Out of range. Please enter a value between 0 and 15" << std::endl;
+                    break;
+                } else {
+                    std::cout << calculate::rderangement(argv[0]) << std::endl;
+                }
+                break;
             }
-        case 4:
-            {
-            n = std::stoi(argv[2]);
-            strout = calculate::derangement(n);
-            break;
+            case 4: {
+                std::cout << calculate::derangement(argv[0]) << std::endl;
+                break;
             }
-        default:
-            {
-            std::cerr << "Please enter a valid set of input arguments";
-            return -1;
+            default: {
+                std::cerr << "Please enter a valid set of input arguments";
+                break;
             }
+        }
     }
-
-    std::cout << (intout == -1 ? "" : std::to_string(intout)) << strout << std::endl;
 
     return 0;
 }

@@ -7,54 +7,77 @@
 #include "counting_header.h"
 #include <ctype.h>
 #include <iostream>
+#include <sstream>
 #include <string>
 
-void tools::argprint(int argc, char *argv[]) {
-    std::cout << "Number of arguments: " << argc - 1 << std::endl; 
+int mode(std::string line, int* argv) {
+    std::istringstream input(line);
+    std::string operation;
+    int n, k;
 
-    for (int i = 1; i < argc; ++i) {
-        std::cout << "Argument " << i << ": " << argv[i] << std::endl;
+    if (!(input >> n >> operation))
+        return -1;
+    
+    if (operation == "choose") {
+        if (input >> k) {
+            argv[0] = n;
+            argv[1] = k;
+            return 1;
+        }
+        return -1;
+    } else if (operation == "permute") {
+        if (input >> k) {
+            argv[0] = n;
+            argv[1] = k;
+            return 2;
+        }
+        return -1; 
+    } else if (operation == "rderangement") {
+        argv[0] = n;
+        return 3;
+    } else if (operation == "derangement") {
+        argv[0] = n;
+        return 4;
+    } else {
+        return -1;
     }
 }
 
-int read::mode(int argc, char *argv[]) {
-    switch (argc){
-        case 3:
-            if ((std::string)argv[1] == "rderangement")
-                return 3;
-            else if ((std::string)argv[1] == "derangement")
-                return 4;
-        case 4:
-            if ((std::string)argv[2] == "choose")
-                return 1;
-            else if ((std::string)argv[2] == "permute")
-                return 2;
+int calculate::choose(int n, int k) {
+    if (n < 0 || n > 10000) {
+        std::cerr << "Out of range. Please enter a value between 0 and 10000" << std::endl;
+        exit;
+    } else if (k > n) {
+        return 0;
+    }   
+
+    int result = 1;
+    
+    for (int i = 1; i <= k; ++i) {
+        result *= (n - 1 + i)/i;
     }
-    return -1;
+
+    return result;
 }
 
-int calculate::factorial(int n) {
-    if (n == 0 || n == 1)
-        return 1;
-    else
-        return n*calculate::factorial(n - 1);
+int calculate::permute(int n, int k) {
+   if (n < 0 || n > 10000) {
+        std::cerr << "Out of range. Please enter a value between 0 and 10000" << std::endl;
+        exit;
+    } else if (k > n) {
+        return 0;
+    }
+
+    int result = 1;
+    
+    for (int i = 1; i <= k; ++i) {
+        result *= (n - i + 1);
+    }
+
+    return result;
 }
 
-int calculate::choose(char* nchar, char* kchar) {
-    unsigned int n = std::stoi(nchar);
-    unsigned int k = std::stoi(kchar);
-
-    return calculate::factorial(n)/(calculate::factorial(k)*calculate::factorial(n-k));
-}
-
-int calculate::permute(char* nchar, char* kchar) {
-    unsigned int n = std::stoi(nchar);
-    unsigned int k = std::stoi(kchar);
-
-    return calculate::factorial(n)/calculate::factorial(n-k);
-}
-
-int calculate::rderangement(int n) {
+int calculate::rderangement(int n) { // change output and input size
     if (n == 0)
         return 1;
     else if (n == 1)
@@ -68,10 +91,9 @@ std::string calculate::derangement(int n) {
     std::string dtable[] = {"1","0","1","2","9","44","265","1854","14833","133496","1334961",
         "14684570","176214841","2290792932","32071101049","481066515734","7697064251745",
         "130850092279664","2355301661033953","44750731559645106","895014631192902121",
-        "18795307255050944540","413496759611120779881","9510425471055777937262"
-    };
+        "18795307255050944540","413496759611120779881","9510425471055777937262"};
 
     if (n >= 0 && n <= 23)
         return dtable[n];
-    return "Out of range. Please choose an integer input between 1 and 23";
+    return "Out of range. Please enter an integer input between 0 and 23";
 }
