@@ -193,4 +193,47 @@
     
 % Problem 6:
 
+\section{You have two hats. The first hat contains 2 orange marbles and 7 red marbles;
+    the second hat contains 4 orange marbles and 3 red marbles. Bob selects a marble
+    by first picking one of the two hats at random. He then selects one of the marbles in this hat
+    at random. If Bob has selected a red marble, what is the probability that he selected a
+    marble from the first hat?}
+\hspace{1cm}\textit{To solve this problem, we can use Bayes' Theorem:}
+\begin{center}
+    \begin{tabular}{c|c|c}
+        Quantity & Meaning & Value \\
+        \hline
+        $Pr(H_1)$ & First hat is picked & $1/2$ \\
+        $Pr(H_2)$ & Second hat is picked & $1/2$ \\
+        \hline
+        $Pr(R|H_1)$ & Red marble in first hat & $7/9$ \\
+        $Pr(R|H_2)$ & Red marble in second hat & $3/7$ \\
+        $Pr(O|H_1)$ & Orange marble in first hat & $2/9$ \\
+        $Pr(O|H_2)$ & Orange marble in second hat & $4/7$ \\
+    \end{tabular} \\
+    \vspace{0.25cm}
+    $Pr(H_1|R) = \frac{Pr(R|H_1)\cdot Pr(H_1)}{Pr(R)}$ \\
+    \vspace{0.25cm}
+    \textit{Solve for $Pr(R)$ using the total probability theorem:} \\
+    \vspace{0.25cm}
+    $Pr(R) = Pr(R|H_1)\cdot Pr(H_1) + Pr(R|H_2)\cdot Pr(H_2)$ \\
+    \vspace{0.25cm}
+    $ = \frac{7}{9}\cdot \frac{1}{2} + \frac{3}{7}\cdot \frac{1}{2} = 
+    \frac{7}{18} + \frac{3}{14} = \frac{38}{63}$ \\
+    \vspace{0.25cm}
+    \textit{Finish by plugging in known values:} \\
+    \vspace{0.25cm}
+    $ Pr(H_1|R) = \frac{(7/9)(1/2)}{(38/63)} = 64.47\%$ \\
+    \vspace{0.25cm}
+\end{center}
+\clearpage
+
+% Problem 7:
+
+\section{Suppose that the words ``Act now" occur in 250 out of 2500 messages known to be spam
+    and in 5 of 1000 messages known not to be spam. Estimate the probability that an
+    incoming message containing the words ``Act now" is spam, assuming that it is equally
+    likely that an incoming message is spam or not spam. If our threshold for rejecting
+    a message as spam is 0.9, will we reject this incoming message?}
+
 \end{document}
