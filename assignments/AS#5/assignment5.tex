@@ -164,10 +164,10 @@
         = 45$ edges.} \\
 \end{center}
 \hspace{1cm}\textit{What about in a bipartite graph? In a bipartite graph, edges are formed
-    between the top and bottom vertices. Thus, we can count the node degrees on either
-    row, sum them up, and that will give us our edges. If $V$ is our number of vertices, then
+    between two distinct sets vertices. Thus, we can count the node degrees in either
+    set, sum them up, and that will give us our edges. If $V$ is our number of vertices, then
     we can form, at most, $V/2$ connections per node, and still have a bipartite graph.
-    if we sum up this max per every node in either (but not both) row(s), we would sum the node
+    if we sum up this max per every node in either (but not both) set(s), we would sum the node
     degrees $V/2$ times. Thus, our equation becomes $(V/2)^2$. (Note: This calculation assumes
     that $V$ is an even number.)}
 \begin{center}
@@ -179,4 +179,23 @@ the number of vertices. Therefore:}
 \begin{center}
     \large{$(V-1) \xrightarrow{} (10-1) = 9$ edges.} \\
 \end{center}
+\clearpage
+
+% Problem 5:
+
+\section{Consider graphs with $n$ vertices. Remember, graphs do not need to be connected.}
+\subsection{How many edges must the graph have to guarantee at least one vertex has degree
+    two or more? Prove your answer.}
+\hspace{1cm}\textit{Imagine $3$ vertices in a triangular pattern. We can start by adding one
+    edge, which means two vertices will have a degree of $1$. Next, we'll add another edge. It
+    is at this point (2 edges) that at least one vertex will have a degree of $2$. Repeat this process for
+    $4$ vertices in a square (3 edges), $5$ vertices in a pentagon (3 edges), and $6$ vertices in
+    a hexagon (4 edges). At this point, the pattern has emerged. Let's define a function $L_{2\mathbb{Z}}(n)$,
+    that rounds down to the nearest even integer. By analyzing out pattern, we see that the number of edges
+    will be $\frac{L_{2\mathbb{Z}}(n)}{2}+1$. This is because, for all the vertices in a graph to be of degree $1$,
+    $n$ must be even so that nodes can become isolated pairs with single edges. At this point, the number of
+    vertices would be $n/2$. Adding an extra edge would cause one of the nodes to raise in degree.}
+\subsection{How many edges must the graph have to guarantee all all vertices has degree
+    two or more? Prove your answer.}
+\hspace{1cm}\textit{Let's return to the logic from part a}
 \end{document}
