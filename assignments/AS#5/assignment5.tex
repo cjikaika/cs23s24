@@ -42,6 +42,8 @@
 % Page 1:
 \pagenumbering{arabic}
 
+% Problem 1:
+
 \section{If 12 people shake hands with each other, how many
     handshakes take place.}
 \hspace{1cm}\textit{In order to solve this problem, we are
@@ -56,6 +58,8 @@
         = 66$.} \\
 \end{center}
 \hspace{1cm}\textit{Thus, $66$ handshakes take place.}
+
+% Proble 2
 
 \section{In a group of six people, is it possible for everyone
     to be friends with exactly two other people in the group?
@@ -86,6 +90,55 @@
 \end{center}
 \hspace{1cm}\textit{Thus, we can see that each combination of number
     of friends is possible.}
+\clearpage
 
+% Problem 3:
 
+\section{ Is it possible for two graphs with the same number of nodes
+    and edges to not be isomorphic? What if the degrees of the nodes in
+    the two graphs are the same? Give example graphs or explain why.}
+\hspace{1cm}\textit{Take a look at the graphs below. They each have $6$
+    nodes and $9$ edges, yet are not isomorphic. While the sum of
+    all node degrees in both graphs is $18$, the bipartite graph's nodes
+    are evenly distributed, whereas its opposition's are not. Therefore, 
+    if the node degrees differ, non-isomorphic graphs are clearly possible.}
+\begin{center}
+    \begin{tikzpicture}
+        \node[draw, circle, fill=gray!50] (node1) at (0,2) {1};  
+        \node[draw, circle, fill=gray!50] (node2) at (2,2) {2};  
+        \node[draw, circle, fill=gray!50] (node3) at (4,2) {3};  
+        \node[draw, circle, fill=gray!50] (node4) at (0,0) {4};  
+        \node[draw, circle, fill=gray!50] (node5) at (2,0) {5};  
+        \node[draw, circle, fill=gray!50] (node6) at (4,0) {6};
+        
+        \draw (node1.south) -- (node4.north);
+        \draw (node1.south) -- (node5.north);
+        \draw (node1.south) -- (node6.north);
+        \draw (node2.south) -- (node4.north);
+        \draw (node2.south) -- (node5.north);
+        \draw (node2.south) -- (node6.north);
+        \draw (node3.south) -- (node4.north);
+        \draw (node3.south) -- (node5.north);
+        \draw (node3.south) -- (node6.north);
+    \end{tikzpicture} \\
+    \vspace{0.5cm}
+    \begin{tikzpicture}
+        \node[draw, circle, fill=gray!50] (node1) at (0,0) {1};  
+        \node[draw, circle, fill=gray!50] (node2) at (1,1.73) {2};  
+        \node[draw, circle, fill=gray!50] (node3) at (2,0) {3};  
+        \node[draw, circle, fill=gray!50] (node4) at (4,0) {4};  
+        \node[draw, circle, fill=gray!50] (node5) at (5,1.73) {5};  
+        \node[draw, circle, fill=gray!50] (node6) at (6,0) {6};
+        
+        \draw (node1.north) -- (node2.west);
+        \draw (node1.east) -- (node3.west);
+        \draw (node2.east) -- (node3.north);
+        \draw (node4.north) -- (node5.west);
+        \draw (node4.east) -- (node6.west);
+        \draw (node5.east) -- (node6.north);
+        \draw (node2.east) -- (node5.west);
+        \draw (node3.east) -- (node4.west);
+        \draw (node2.east) -- (node4.west);
+    \end{tikzpicture}
+\end{center}
 \end{document}
