@@ -59,7 +59,7 @@
 \end{center}
 \hspace{1cm}\textit{Thus, $66$ handshakes take place.}
 
-% Proble 2
+% Problem 2
 
 \section{In a group of six people, is it possible for everyone
     to be friends with exactly two other people in the group?
@@ -147,5 +147,36 @@
     this logic requires the graph to be nondirectional. If the connections between
     nodes indicate or carry direction, then you could still find ways to create two
     or more non-isomophic graphs.)}
-    
+\clearpage
+
+% Problem 4:
+
+\section{What is the largest number of edges possible in a graph with 10 vertices?
+    What is the largest number of edges possible in a bipartite graph with 10 vertices?
+    What is the largest number of edges possible in a tree with 10 vertices?}
+\hspace{1cm}\textit{The first portion of this question is nearly identical in logic to 
+    Problem 1. The maximum number of edges possible in a graph with 10 verices would be
+    one where each vertex connects to each and every other vertex; Every person shakes
+    hands with each and every other person. Thus:}
+\begin{center}
+    \large{$nCr = C(n,r) = \frac{n!}{r!(n-r)!}$}
+    \large{$\xrightarrow{} C(10,2) = \frac{10!}{2!(10-2)!}
+        = 45$ edges.} \\
+\end{center}
+\hspace{1cm}\textit{What about in a bipartite graph? In a bipartite graph, edges are formed
+    between the top and bottom vertices. Thus, we can count the node degrees on either
+    row, sum them up, and that will give us our edges. If $V$ is our number of vertices, then
+    we can form, at most, $V/2$ connections per node, and still have a bipartite graph.
+    if we sum up this max per every node in either (but not both) row(s), we would sum the node
+    degrees $V/2$ times. Thus, our equation becomes $(V/2)^2$. (Note: This calculation assumes
+    that $V$ is an even number.)}
+\begin{center}
+    \large{$(\frac{V}{2})^2 \xrightarrow{} (\frac{10}{2})^2 = 25$ edges.} \\
+\end{center}
+\hspace{1cm}\textit{What about in a tree graph? One of characterizing traits of tree graphs is that 
+they do not contain cycles. In a tree graph, there will always be $(V-1)$ edges, where $V$ is
+the number of vertices. Therefore:}
+\begin{center}
+    \large{$(V-1) \xrightarrow{} (10-1) = 9$ edges.} \\
+\end{center}
 \end{document}
