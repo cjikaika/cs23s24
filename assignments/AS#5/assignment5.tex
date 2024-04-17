@@ -94,7 +94,7 @@
 
 % Problem 3:
 
-\section{ Is it possible for two graphs with the same number of nodes
+\section{Is it possible for two graphs with the same number of nodes
     and edges to not be isomorphic? What if the degrees of the nodes in
     the two graphs are the same? Give example graphs or explain why.}
 \hspace{1cm}\textit{Take a look at the graphs below. They each have $6$
@@ -111,15 +111,15 @@
         \node[draw, circle, fill=gray!50] (node5) at (2,0) {5};  
         \node[draw, circle, fill=gray!50] (node6) at (4,0) {6};
         
-        \draw (node1.south) -- (node4.north);
-        \draw (node1.south) -- (node5.north);
-        \draw (node1.south) -- (node6.north);
-        \draw (node2.south) -- (node4.north);
-        \draw (node2.south) -- (node5.north);
-        \draw (node2.south) -- (node6.north);
-        \draw (node3.south) -- (node4.north);
-        \draw (node3.south) -- (node5.north);
-        \draw (node3.south) -- (node6.north);
+        \draw (node1) -- (node4);
+        \draw (node1) -- (node5);
+        \draw (node1) -- (node6);
+        \draw (node2) -- (node4);
+        \draw (node2) -- (node5);
+        \draw (node2) -- (node6);
+        \draw (node3) -- (node4);
+        \draw (node3) -- (node5);
+        \draw (node3) -- (node6);
     \end{tikzpicture} \\
     \vspace{0.5cm}
     \begin{tikzpicture}
@@ -130,15 +130,22 @@
         \node[draw, circle, fill=gray!50] (node5) at (5,1.73) {5};  
         \node[draw, circle, fill=gray!50] (node6) at (6,0) {6};
         
-        \draw (node1.north) -- (node2.west);
-        \draw (node1.east) -- (node3.west);
-        \draw (node2.east) -- (node3.north);
-        \draw (node4.north) -- (node5.west);
-        \draw (node4.east) -- (node6.west);
-        \draw (node5.east) -- (node6.north);
-        \draw (node2.east) -- (node5.west);
-        \draw (node3.east) -- (node4.west);
-        \draw (node2.east) -- (node4.west);
-    \end{tikzpicture}
+        \draw (node1) -- (node2);
+        \draw (node1) -- (node3);
+        \draw (node2) -- (node3);
+        \draw (node4) -- (node5);
+        \draw (node4) -- (node6);
+        \draw (node5) -- (node6);
+        \draw (node2) -- (node5);
+        \draw (node3) -- (node4);
+        \draw (node2) -- (node4);
+    \end{tikzpicture} \\
 \end{center}
+\vspace{0.25cm}
+\hspace{1cm}\textit{But what if all the nodes have the same degree? In that case,
+    every graph with the same number of nodes and edges would be isomophic. (Note:
+    this logic requires the graph to be nondirectional. If the connections between
+    nodes indicate or carry direction, then you could still find ways to create two
+    or more non-isomophic graphs.)}
+    
 \end{document}
