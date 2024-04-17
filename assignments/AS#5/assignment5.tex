@@ -195,7 +195,12 @@ the number of vertices. Therefore:}
     will be $\frac{L_{2\mathbb{Z}}(n)}{2}+1$. This is because, for all the vertices in a graph to be of degree $1$,
     $n$ must be even so that nodes can become isolated pairs with single edges. At this point, the number of
     vertices would be $n/2$. Adding an extra edge would cause one of the nodes to raise in degree.}
-\subsection{How many edges must the graph have to guarantee all all vertices has degree
+\subsection{How many edges must the graph have to guarantee all vertices have a degree of
     two or more? Prove your answer.}
-\hspace{1cm}\textit{Let's return to the logic from part a}
+\hspace{1cm}\textit{Let's return to our logic from part a and run through the scenarios once again,
+    counting how many edges we need before our new criteria is met. For a triangle, it's $3$ edges,
+    a square, $4$, a pentagon, $5$...so on and so forth. This one is simpler to prove, as all of the
+    node degrees in a graph must sum to an even number. Which, when divided in half, returns the number
+    of edges in the graph. So, if you have $n$ vertices, and they all must have a degree of $D$, then the
+    number of edges would be equal to $\frac{n\cdot D}{2}$. Solving this for $D=2$, we get $\frac{n\cdot 2}{2} = n$.}
 \end{document}
