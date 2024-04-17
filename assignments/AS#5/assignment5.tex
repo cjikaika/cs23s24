@@ -5,6 +5,7 @@
 \usepackage{fancyhdr}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{mathbbol}
 \usepackage{tikz}
 \usetikzlibrary{arrows}
 \usetikzlibrary{backgrounds}
@@ -41,7 +42,50 @@
 % Page 1:
 \pagenumbering{arabic}
 
+\section{If 12 people shake hands with each other, how many
+    handshakes take place.}
+\hspace{1cm}\textit{In order to solve this problem, we are
+    looking for how many ways we can create groups of $2$
+    people from the $12$. This leads us to the combinations
+    formula: $nCr$, where $n$ is the total number of people
+    and $r$ represents a single handshake between $2$ people.
+    See below:}
+\begin{center}
+    \large{$nCr = C(n,r) = \frac{n!}{r!(n-r)!}$}
+    \large{$\xrightarrow{} C(12,2) = \frac{12!}{2!(12-2)!}
+        = 66$.} \\
+\end{center}
+\hspace{1cm}\textit{Thus, $66$ handshakes take place.}
 
+\section{In a group of six people, is it possible for everyone
+    to be friends with exactly two other people in the group?
+    How about three other people? Four?}
+\hspace{1cm}\textit{While drawing out graphs is an option, an
+    easier and more straightforward approach involves counting
+    the number of degrees between each node. The sum of degrees
+    must be always be even because it takes two nodes to form
+    an edge. Let's apply this logic to the question. If each person
+    is repesented by a node, and each friendship by an edge, then the
+    number of degrees on each node is the number of friends any given
+    person has. Thus, we can evaluate the boolean of the following
+    statement see if each case is possible:}
+\begin{center}
+    \large{True or false: For $n$ nodes, each with $r$ degrees, is 
+    $\frac{n\cdot r}{2} \in \mathbb{Z}$?} \\
+    \vspace{0.25cm}
+    \normalsize{}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Number of People & Number of Friends & Statement & True or False \\
+        \hline
+        6 & 2 & $(6\cdot 2)/2 = 6$ & True \\
+        6 & 3 & $(6\cdot 3)/2 = 9$ & True \\
+        6 & 4 & $(6\cdot 4)/2 = 12$ & True \\
+        \hline
+    \end{tabular}
+\end{center}
+\hspace{1cm}\textit{Thus, we can see that each combination of number
+    of friends is possible.}
 
 
 \end{document}
