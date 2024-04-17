@@ -155,8 +155,8 @@
     What is the largest number of edges possible in a bipartite graph with 10 vertices?
     What is the largest number of edges possible in a tree with 10 vertices?}
 \hspace{1cm}\textit{The first portion of this question is nearly identical in logic to 
-    Problem 1. The maximum number of edges possible in a graph with 10 verices would be
-    one where each vertex connects to each and every other vertex; Every person shakes
+    Problem 1. The maximum number of edges possible in a graph with 10 vertices would occur
+    where each vertex connects to each and every other vertex; Every person shakes
     hands with each and every other person. Thus:}
 \begin{center}
     \large{$nCr = C(n,r) = \frac{n!}{r!(n-r)!}$}
@@ -164,16 +164,17 @@
         = 45$ edges.} \\
 \end{center}
 \hspace{1cm}\textit{What about in a bipartite graph? In a bipartite graph, edges are formed
-    between two distinct sets vertices. Thus, we can count the node degrees in either
-    set, sum them up, and that will give us our edges. If $V$ is our number of vertices, then
+    between two distinct sets of
+    vertices. Thus, we can count the node degrees in either
+    set, sum them up, and that will give us our edges. If $V$ is our number of vertices, 
     we can form, at most, $V/2$ connections per node, and still have a bipartite graph.
-    if we sum up this max per every node in either (but not both) set(s), we would sum the node
+    If we sum up this max per every node in either (but not both) set(s), we would sum the node
     degrees $V/2$ times. Thus, our equation becomes $(V/2)^2$. (Note: This calculation assumes
     that $V$ is an even number.)}
 \begin{center}
     \large{$(\frac{V}{2})^2 \xrightarrow{} (\frac{10}{2})^2 = 25$ edges.} \\
 \end{center}
-\hspace{1cm}\textit{What about in a tree graph? One of characterizing traits of tree graphs is that 
+\hspace{1cm}\textit{What about in a tree graph? One of the characterizing traits of tree graphs is that 
 they do not contain cycles. In a tree graph, there will always be $(V-1)$ edges, where $V$ is
 the number of vertices. Therefore:}
 \begin{center}
@@ -191,9 +192,9 @@ the number of vertices. Therefore:}
     is at this point (2 edges) that at least one vertex will have a degree of $2$. Repeat this process for
     $4$ vertices in a square (3 edges), $5$ vertices in a pentagon (3 edges), and $6$ vertices in
     a hexagon (4 edges). At this point, the pattern has emerged. Let's define a function $L_{2\mathbb{Z}}(n)$,
-    that rounds down to the nearest even integer. By analyzing out pattern, we see that the number of edges
+    that rounds down to the nearest even integer. By analyzing this pattern, we see that the number of edges
     will be $\frac{L_{2\mathbb{Z}}(n)}{2}+1$. This is because, for all the vertices in a graph to be of degree $1$,
-    $n$ must be even so that nodes can become isolated pairs with single edges. At this point, the number of
+    $n$ must be even such that the nodes can become isolated pairs with single edges. At this point, the number of
     vertices would be $n/2$. Adding an extra edge would cause one of the nodes to raise in degree.}
 \subsection{How many edges must the graph have to guarantee all vertices have a degree of
     two or more? Prove your answer.}
