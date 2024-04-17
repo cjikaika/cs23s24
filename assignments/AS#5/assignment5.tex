@@ -203,4 +203,44 @@ the number of vertices. Therefore:}
     node degrees in a graph must sum to an even number. Which, when divided in half, returns the number
     of edges in the graph. So, if you have $n$ vertices, and they all must have a degree of $D$, then the
     number of edges would be equal to $\frac{n\cdot D}{2}$. Solving this for $D=2$, we get $\frac{n\cdot 2}{2} = n$.}
+\clearpage
+
+% Problem 6:
+
+\section{Refer to the figure below:}
+\includegraphics[scale=0.66]{assignment5-problem6.png}
+
+\hspace{1cm}\textit{Starting from the left, let's call these graphs A, B, C, and D. Every graph, except for C, is bipartite.}
+\subsection{Graph A: Visual Proof.}
+\begin{center}
+    \begin{tikzpicture}
+        \node[draw, circle, fill=red!50] (node1) at (0,2) {1};  
+        \node[draw, circle, fill=red!50] (node2) at (0,0) {2};  
+        \node[draw, circle, fill=red!50] (node3) at (0,-2) {3}; 
+        \node[draw, circle, fill=gray!50] (node4) at (-2,0) {4};  
+        \node[draw, circle, fill=gray!50] (node5) at (2,0) {5};  
+        \draw (node1) -- (node4);
+        \draw (node1) -- (node5);
+        \draw (node2) -- (node4);
+        \draw (node2) -- (node5);
+        \draw (node1) -- (node4);
+        \draw (node3) -- (node4);
+        \draw (node3) -- (node5);
+    \end{tikzpicture}
+\end{center}
+
+\subsection{Graph B: Written Explanation}
+\hspace{1cm}\textit{Since Graph B has an even number of nodes and a cyclical 
+    strcuture, by assigning sets in an alternating pattern (Node 1 $\in$ Set A,
+    Node 2 $\in$ Set B, Node 3 $\in$ set A, etc), we identify that the graph is
+    bipartite.}
+\subsection{Graph C: Written Explanation}
+\hspace{1cm}\textit{Graph C has the same cyclical structure as Graph B, meaning
+    that we would apply the same logic. However, since Graph C has an odd number
+    of nodes, there is no way to divide up the nodes into two distinct sets that 
+    form a bipartite graph.}
+\subsection{Graph D: Written Explanation}
+\hspace{1cm}\textit{Graph D can be proven to be bipartite by assigning the center
+    node to Set A, and the orbiting nodes to Set B.}
+
 \end{document}

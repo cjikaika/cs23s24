@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.1)  16 APR 2024 23:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.9.1)  16 APR 2024 23:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -361,20 +361,28 @@ LaTeX Font Info:    Trying to load font information for U+bbold on input line 38
 
 ] [4
 
-] (./assignment5.aux) ) 
+]
+<assignment5-problem6.png, id=39, 518.93875pt x 144.54pt>
+File: assignment5-problem6.png Graphic file (type png)
+<use assignment5-problem6.png>
+Package pdftex.def Info: assignment5-problem6.png  used on input line 211.
+(pdftex.def)             Requested size: 342.50063pt x 95.39668pt.
+ [5
+
+ <./assignment5-problem6.png>] (./assignment5.aux) ) 
 Here is how much of TeX's memory you used:
- 13366 strings out of 478268
- 279070 string characters out of 5846348
+ 13377 strings out of 478268
+ 279313 string characters out of 5846348
  539072 words of memory out of 5000000
- 31351 multiletter control sequences out of 15000+600000
+ 31360 multiletter control sequences out of 15000+600000
  476815 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,12n,89p,460b,662s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/bbold-type1/bbold5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on assignment5.pdf (5 pages, 182397 bytes).
+Output written on assignment5.pdf (6 pages, 224159 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
+ 119 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
