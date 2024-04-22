@@ -1,0 +1,55 @@
+% Preamble:
+\documentclass{article}
+
+% Packages:
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{mathbbol}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{backgrounds}
+
+% Title Page Information:
+\title{CS23 Assignment Five}
+\author{CJ Bridgman-Ford \\ cj.ikaika@gmail.com}
+\date{April 16, 2024}
+
+% Make subsections lettered:
+\renewcommand{\thesubsection}{\alph{subsection}.}
+
+% fancyhdr Page Styling:
+\newcommand{\pagenumber}{\thepage\quad}
+\newcommand{\authorname}{CJ Bridgman-Ford}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead{}
+\fancyfoot[L]{\authorname}
+\fancyfoot[C]{}
+\fancyfoot[R]{\pagenumber}
+
+% End of Preamble.
+
+% Start of document:
+\begin{document}
+
+% Title Page:
+\maketitle
+\thispagestyle{empty}
+
+\clearpage
+% Page 1:
+\pagenumbering{arabic}
+
+% Problem 1:
+
+\section{We often define graph theory concepts using set theory. For example, given a graph $G=(V,E)$ and a vertex $v \in V$, we define}
+\begin{center}
+    $N(v) = \{u \in V : \{v,u\}\in E\}$
+\end{center}
+\section*{We define $N[v]=N[v]U\{x\}$. THe goal of this problem is to figure out what all this means.}
+\subsection{Let $G$ be the graph with $V=\{a,b,c,d,e,f\}$ and $E=\{\{a,b\},\{a,e\},\{b,c\},\{b,e\}.\{c,d\},\{c,f\},\{d,f\},\{e,f\}\}$. Find $N(a), N[a], N(c), and N[c]$.}
+\subsection{What is the largest and smallest possible values for $|N(v)|$ and $|N[v]|$ for the graph in part (a)? Explain?}
+\subsection{Give an example of a graph $G={V,E}$ (probably different than the one above) for which $N[v]=V$}
+\end{document}
