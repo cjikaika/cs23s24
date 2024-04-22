@@ -66,7 +66,7 @@
 \section{Which of the following graphs are trees?}
 \includegraphics[scale=0.27]{problem2.png} \\
 
-\hspace{1cm}\textit{Trees satisfy two conditions, they do not have cycles and are connected. Graph (a) has a cycle $(a,b,c,d,e,a)$, therefore it is not a tree. Graph (b) is a tree. Graph (c) a tree. Graph (d) is not a tree, as the graph is not fully connected.}
+\textit{Trees satisfy two conditions, they do not have cycles and are connected. Graph (a) has a cycle $(a,b,c,d,e,a)$, therefore it is not a tree. Graph (b) is a tree. Graph (c) a tree. Graph (d) is not a tree, as the graph is not fully connected.}
 
 
 
@@ -75,17 +75,23 @@
 \section{For each degree sequence below, decide whether it must always, must never, or could possibly be a degree sequence for a tree.}
 \hspace{1cm}\includegraphics[scale=0.27]{problem3.png}
 
+\textit{For (a), the node degrees must always be a tree. This is evident in problem 2c. For (b), (c), and (d), there's no way to make a tree graph without cycles in it.}
+
 % Problem 4:
 
 \section{Suppose you have a graph with $v$ vertices and $e$ edges that satisfies $v=e+1$. Must the graph be a tree? Prove your answer?}
+\textit{The graph could be a tree, but it does not necessarily have to be. Take the graph $V=\{a,b,c,d\}$ with edges $E=\{\{a,b\},\{a,c\},\{b,c\}\}$. The equation is still satisfied, but the graph is not a tree as vertex $d$ has a degree of $0$.}
+\clearpage
 
 % Problem 5:
 
 \section{Prove that any graph with $v$ vertices and $e$ edges that satisfies $v>e+1$ will not be connected.}
+\hspace{1cm}\textit{Imagine the basic geometric shapes (line | $n=2$, triangle | $n=3$, square | $n=4$, pentagon | $n=5$, etc). In order to completely represent these shapes using a graph, you will need a $n$ vertices and $n$ edges. However, you can still have a connected graph if you take away one edge. This graph will have no cycles, so, for $n$ vertices and $n-1$ edges, you will have a tree graph.}
 
 % Problem 6:
 
 \section{Let $T$ be a rooted tree that contains vertices $u$, $v$, and $w$ (among possibly others). Prove that if $w$ is a descendant of both $u$ and $v$, then $u$ is a descendant of $v$ or vice versa.}
+\hspace{1cm}\textit{Since trees do not contain cycles, for a vertex to be a descendant of two other vertices, there must be a traceable path between all three. Suppose the path starts (or the root is) at $u$ and ends and $w$. Then $v$ must be in the middle, making both $v$ and $w$ descendants of $u$. The opposite can be said for the case where the starts at $v$.}
 
 % Problem 7:
 
