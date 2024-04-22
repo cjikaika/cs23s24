@@ -11,9 +11,9 @@
 \usetikzlibrary{backgrounds}
 
 % Title Page Information:
-\title{CS23 Assignment Five}
+\title{CS23 Assignment Six}
 \author{CJ Bridgman-Ford \\ cj.ikaika@gmail.com}
-\date{April 16, 2024}
+\date{April 21, 2024}
 
 % Make subsections lettered:
 \renewcommand{\thesubsection}{\alph{subsection}.}
@@ -86,7 +86,7 @@
 % Problem 5:
 
 \section{Prove that any graph with $v$ vertices and $e$ edges that satisfies $v>e+1$ will not be connected.}
-\hspace{1cm}\textit{Imagine the basic geometric shapes (line | $n=2$, triangle | $n=3$, square | $n=4$, pentagon | $n=5$, etc). In order to completely represent these shapes using a graph, you will need a $n$ vertices and $n$ edges. However, you can still have a connected graph if you take away one edge. This graph will have no cycles, so, for $n$ vertices and $n-1$ edges, you will have a tree graph.}
+\hspace{1cm}\textit{Imagine the basic geometric shapes (line | $n=2$, triangle | $n=3$, square | $n=4$, pentagon | $n=5$, etc). Exlcuding a line, in order to completely represent these shapes using a graph, you will need a $n$ vertices and $n$ edges. However, you can still have a connected graph if you take away one edge. This graph will have no cycles, so, for $n$ vertices and $n-1$ edges, you will have a tree graph.}
 
 % Problem 6:
 
@@ -96,5 +96,6 @@
 % Problem 7:
 
 \section{Prove that every connected graph which is not itself a tree must have at last three different spanning trees.}
+\hspace{1cm}\textit{Let's return to the basic shapes from problem 5 and analyze them. We start off with a line. In a complete line, there is $n$ vertices and $n-1$ edges with no cycles. Therefore, a line is a tree graph, and thus excluded from this problem. With a complete triangle, you have $n$ vertices and $n$ edges. If you take away one edge, you create a tree graph. There are three different edges you could remove, meaning there are three different possible tree graphs. Thus, there are $3$ different spanning trees. For a square, the same logic applies, and there are $4$ different spanning trees. For each subsequent shape, there will be $n$ spanning trees. Thus, if this logic begins at a triangle ($n=3$), every connected graph which is not itself a tree must have at last three different spanning trees.}
 
 \end{document}
