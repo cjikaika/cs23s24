@@ -132,10 +132,98 @@
 \begin{center}
     \includegraphics[scale=0.5]{problem2.png}
 \end{center}
-\subsection{Find the Hamilton path. Can the path be extended to a Hamilton cycle?}
+\subsection{Find a Hamilton path. Can this path be extended to a Hamilton cycle?}
+\hspace{1cm}\textit{I cannot find a hamilton path for this graph. Every path seems to dead end in a two way split. If I could find a path, it could not be extended to a cycle, as the graph appears to be bipartite.}
+\begin{center}
+    \begin{tikzpicture}
+        \node[draw, circle, fill=gray!50] (node1) at (0,0) {1};
+        \node[draw, circle, fill=red!50] (node2) at (2,0) {2};
+        \node[draw, circle, fill=gray!50] (node3) at (4,0) {3};
+        \node[draw, circle, fill=red!50] (node4) at (6,0) {4};
+        \node[draw, circle, fill=gray!50] (node5) at (8,0) {5};
+        \node[draw, circle, fill=red!50] (node6) at (1,2) {6};
+        \node[draw, circle, fill=gray!50] (node7) at (4,3) {7};
+        \node[draw, circle, fill=red!50] (node8) at (7,2) {8};
+        \node[draw, circle, fill=red!50] (node9) at (1,-2) {9};
+        \node[draw, circle, fill=gray!50] (node10) at (4,-3) {10};
+        \node[draw, circle, fill=red!50] (node11) at (7,-2) {11};
+        
+        \draw (node1) -- (node2);
+        \draw (node1) -- (node6);
+        \draw (node1) -- (node9);
+        \draw (node2) -- (node7);
+        \draw (node2) -- (node10);
+        \draw (node3) -- (node6);
+        \draw (node3) -- (node8);
+        \draw (node3) -- (node9);
+        \draw (node3) -- (node11);
+        \draw (node4) -- (node5);
+        \draw (node4) -- (node7);
+        \draw (node4) -- (node10);
+        \draw (node5) -- (node8);
+        \draw (node5) -- (node11);
+        \draw (node6) -- (node7);
+        \draw (node7) -- (node8);
+        \draw (node9) -- (node10);
+        \draw (node10) -- (node11);
+        
+        \draw[thick, blue, ->] (node1) -- (node2);
+        \draw[thick, blue, ->] (node2) -- (node7);
+        \draw[thick, blue, ->] (node7) -- (node6);
+        \draw[thick, blue, ->] (node7) -- (node6);
+        \draw[thick, blue, ->] (node6) -- (node3);
+        \draw[thick, blue, ->] (node3) -- (node9);
+        \draw[thick, blue, ->] (node9) -- (node10);
+        \draw[thick, blue, ->] (node10) -- (node11);
+        \draw[thick, blue, ->] (node11) -- (node5);
+        \draw[thick, blue, ->] (node5) -- (node4);
+        \draw[thick, red, ->] (node5) -- (node8);
+    
+    
+
+    \end{tikzpicture}
+\end{center}
+\clearpage
 \subsection{Is the graph bipartite? If so, how many vertices are in each "part"?}
+\hspace{1cm}\textit{The graph is bipartite, with $5$ vertices in one part and $6$ in the other.}
+\begin{center}
+    \begin{tikzpicture}
+        \node[draw, circle, fill=gray!50] (node1) at (0,0) {1};
+        \node[draw, circle, fill=red!50] (node2) at (2,0) {2};
+        \node[draw, circle, fill=gray!50] (node3) at (4,0) {3};
+        \node[draw, circle, fill=red!50] (node4) at (6,0) {4};
+        \node[draw, circle, fill=gray!50] (node5) at (8,0) {5};
+        \node[draw, circle, fill=red!50] (node6) at (1,2) {6};
+        \node[draw, circle, fill=gray!50] (node7) at (4,3) {7};
+        \node[draw, circle, fill=red!50] (node8) at (7,2) {8};
+        \node[draw, circle, fill=red!50] (node9) at (1,-2) {9};
+        \node[draw, circle, fill=gray!50] (node10) at (4,-3) {10};
+        \node[draw, circle, fill=red!50] (node11) at (7,-2) {11};
+
+        \draw (node1) -- (node2);
+        \draw (node1) -- (node6);
+        \draw (node1) -- (node9);
+        \draw (node2) -- (node7);
+        \draw (node2) -- (node10);
+        \draw (node3) -- (node6);
+        \draw (node3) -- (node8);
+        \draw (node3) -- (node9);
+        \draw (node3) -- (node11);
+        \draw (node4) -- (node5);
+        \draw (node4) -- (node7);
+        \draw (node4) -- (node10);
+        \draw (node5) -- (node8);
+        \draw (node5) -- (node11);
+        \draw (node6) -- (node7);
+        \draw (node7) -- (node8);
+        \draw (node9) -- (node10);
+        \draw (node10) -- (node11);
+    \end{tikzpicture}
+\end{center}
 \subsection{Use your answer in part (b) to prove that the graph has no Hamilton cycle.}
+\hspace{1cm}\textit{Since the graph is bipartite, there can only be a Hamilton cycle if the number of vertices in both parts are equal. That is not the case in this graph, therefore, there is no Hamilton cycle.}
 \subsection{Suppose you have a bipartite graph $G$ in which one part has at least two more vertices than the other. Prove that $G$ does not have a Hamilton path.}
+\hspace{1cm}\textit{A Hamilton path is a bipartite graph will alternate between vertices in the opposing parts. Since the path can only visit each vertex once, there will always be at least $1$ vertex that is impossible to visit.}
 \clearpage
 
 % Problem 3:
@@ -152,11 +240,42 @@
 % Problem 4:
 
 \section{What is the smallest number of colors you need to color the vertices of $K_{5,7}$?}
-\clearpage
+\hspace{1cm}\textit{The smallest number of colors you would need is $2$, since the graph is bipartite.}
 
 % Problem 5:
 
 \section{Draw a graph with chromatic number $5$. \\ Could your graph be planar? Explain.}
+\begin{center}
+    \begin{tikzpicture}
+        \node[draw, circle, fill=red!50] (node1) at (-1,1) {1};
+        \node[draw, circle, fill=orange!50] (node2) at (-1.5,-0.5) {2};
+        \node[draw, circle, fill=purple!50] (node3) at (0,-2) {3};
+        \node[draw, circle, fill=green!50] (node4) at (1.5,-0.5) {4};
+        \node[draw, circle, fill=blue!50] (node5) at (1,1) {5};
+
+        \draw (node1) -- (node2);
+        \draw (node1) -- (node3);
+        \draw (node1) -- (node4);
+        \draw (node1) -- (node5);
+        \draw (node2) -- (node1);
+        \draw (node2) -- (node3);
+        \draw (node2) -- (node4);
+        \draw (node2) -- (node5);
+        \draw (node3) -- (node1);
+        \draw (node3) -- (node2);
+        \draw (node3) -- (node4);
+        \draw (node3) -- (node5);
+        \draw (node4) -- (node1);
+        \draw (node4) -- (node2);
+        \draw (node4) -- (node3);
+        \draw (node4) -- (node5);
+        \draw (node5) -- (node1);
+        \draw (node5) -- (node2);
+        \draw (node5) -- (node3);
+        \draw (node5) -- (node4);
+    \end{tikzpicture}
+\end{center}
+\hspace{1cm}\textit{This graph is not planar as the graph cannot be drawn without edges crossing over.}
 \clearpage
 
 % Problem 6:
@@ -165,6 +284,24 @@
 \begin{center}
     \includegraphics[scale=0.33]{problem6.png}
 \end{center}
+\begin{center}
+    \begin{tikzpicture}[scale=2]
+        \node[draw, circle, fill=purple!50] (John) at (-1,1) {John};
+        \node[draw, circle, fill=green!50] (Voormann) at (-1.5,-0.5) {Voormann};
+        \node[draw, circle, fill=red!50] (Ringo) at (0,-2) {Ringo};
+        \node[draw, circle, fill=blue!50] (Paul) at (1.5,-0.5) {Paul};
+        \node[draw, circle, fill=purple!50] (George) at (1,1) {George};
+
+        \draw (John) -- (Voormann) -- (Ringo) -- (John);
+        \draw (Voormann) -- (George) -- (Paul) -- (Voormann);
+        \draw (John) -- (Paul) -- (Ringo) -- (John);
+        \draw (George) -- (Paul) -- (Ringo) -- (George);
+        \draw (John) -- (Voormann) -- (John);
+        \draw (Voormann) -- (Paul) -- (Ringo) -- (Voormann);
+
+    \end{tikzpicture}
+\end{center}
+\hspace{1cm}\textit{Using a graph where the edges represent who meets with who, and the vertices the individual members, the chromatic number of the graph tells us the number of unique meeting times we need. In this case, the chromatic number is $4$, so we need four different meeting times.}
 \clearpage
 
 \end{document}
