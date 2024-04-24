@@ -233,8 +233,60 @@
     \includegraphics[scale=0.33]{problem3.png}
 \end{center}
 \subsection{Graph $A$:}
+\begin{center}
+    \begin{tikzpicture}
+        \node[draw, circle, fill=red!50] (node1) at (0,2) {1};
+        \node[draw, circle, fill=red!50] (node2) at (2,2) {2};
+        \node[draw, circle, fill=red!50] (node3) at (4,2) {3};
+        \node[draw, circle, fill=gray!50] (A) at (0,0) {A};
+        \node[draw, circle, fill=gray!50] (B) at (2,0) {B};
+        \node[draw, circle, fill=gray!50] (C) at (4,0) {C};
+
+        \draw (node1) -- (B);
+        \draw (node2) -- (A);
+        \draw (node3) -- (C);
+    \end{tikzpicture}
+\end{center}
 \subsection{Graph $B$:}
+\begin{center}
+    \begin{tikzpicture}
+        \node[draw, circle, fill=red!50] (node1) at (0,2) {1};
+        \node[draw, circle, fill=red!50] (node2) at (2,2) {2};
+        \node[draw, circle, fill=red!50] (node3) at (4,2) {3};
+        \node[draw, circle, fill=red!50] (node4) at (6,2) {4};
+        \node[draw, circle, fill=gray!50] (A) at (0,0) {A};
+        \node[draw, circle, fill=gray!50] (B) at (2,0) {B};
+        \node[draw, circle, fill=gray!50] (C) at (4,0) {C};
+        \node[draw, circle, fill=gray!50] (D) at (6,0) {D};
+
+        \draw (node1) -- (A);
+        \draw (node3) -- (D);
+        \draw (node2) -- (B);
+        \draw (node4) -- (B);
+    \end{tikzpicture}
+\end{center}
+\hspace{1cm}\textit{This graph does not have a matching, as $2$ and $4$ are both only connected to $B$.}
 \subsection{Graph $C$:}
+\begin{center}
+    \begin{tikzpicture}
+        \node[draw, circle, fill=red!50] (node1) at (0,2) {1};
+        \node[draw, circle, fill=red!50] (node2) at (2,2) {2};
+        \node[draw, circle, fill=red!50] (node3) at (4,2) {3};
+        \node[draw, circle, fill=red!50] (node4) at (6,2) {4};
+        \node[draw, circle, fill=red!50] (node5) at (8,2) {5};
+        \node[draw, circle, fill=gray!50] (A) at (0,0) {A};
+        \node[draw, circle, fill=gray!50] (B) at (2,0) {B};
+        \node[draw, circle, fill=gray!50] (C) at (4,0) {C};
+        \node[draw, circle, fill=gray!50] (D) at (6,0) {D};
+        \node[draw, circle, fill=gray!50] (E) at (8,0) {E};
+
+        \draw (node1) -- (C);
+        \draw (node2) -- (A);
+        \draw (node3) -- (B);
+        \draw (node4) -- (E);
+        \draw (node5) -- (D);
+    \end{tikzpicture}
+\end{center}
 \clearpage
 
 % Problem 4:
