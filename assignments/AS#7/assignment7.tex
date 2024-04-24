@@ -1,0 +1,170 @@
+% Preamble:
+\documentclass{article}
+
+% Packages:
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{mathbbol}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{backgrounds}
+
+% Title Page Information:
+\title{CS23 Assignment Seven}
+\author{CJ Bridgman-Ford \\ cj.ikaika@gmail.com}
+\date{April 23, 2024}
+
+% Make subsections lettered:
+\renewcommand{\thesubsection}{\alph{subsection}.}
+
+% fancyhdr Page Styling:
+\newcommand{\pagenumber}{\thepage\quad}
+\newcommand{\authorname}{CJ Bridgman-Ford}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead{}
+\fancyfoot[L]{\authorname}
+\fancyfoot[C]{}
+\fancyfoot[R]{\pagenumber}
+
+% End of Preamble.
+
+% Start of document:
+\begin{document}
+
+% Title Page:
+\maketitle
+\thispagestyle{empty}
+
+\clearpage
+% Page 1:
+\pagenumbering{arabic}
+
+% Problem 1:
+
+\section{Which of the following graphs contain and Euler path? Which contain and Euler circuit? Show your work (including the graph).}
+\subsection{$K_4$}
+\hspace{1cm}\textit{$K_4$ does not contain any Euler paths and thus does not contain any Euler circuits. This is because all of the points in the graph have a degree of $3$. An Euler path will only occur in a graph with at most $2$ vertices of odd degree.}
+\subsection{$K_5$}
+\begin{center}
+    \begin{tikzpicture}[scale=0.5]
+        \node[draw, circle, fill=gray!50] (node1) at (-2,4) {1};  
+        \node[draw, circle, fill=gray!50] (node2) at (-6,2) {2};
+        \node[draw, circle, fill=gray!50] (node3) at (-5,-2) {3};
+        \node[draw, circle, fill=gray!50] (node4) at (1,-2) {4};
+        \node[draw, circle, fill=gray!50] (node5) at (2,2) {5};
+        
+        \draw[->] (node1) -- (node3);
+        \draw[->] (node3) -- (node5);
+        \draw[->] (node5) -- (node2);
+        \draw[->] (node2) -- (node4);
+        \draw[->] (node4) -- (node1);
+        \draw[->] (node1) -- (node2);
+        \draw[->] (node2) -- (node3);
+        \draw[->] (node3) -- (node4);
+        \draw[->] (node4) -- (node5);
+        \draw[->] (node5) -- (node1);
+    \end{tikzpicture}
+\end{center}
+\hspace{1cm}\textit{$K_5$ contains an Euler circuit!}
+\subsection{$K_{5,7}$}
+\hspace{1cm}\textit{$K_{5,7}$ does not contain an Euler path or circuit because all $12$ of the vertices all have odd degrees. This is because $K_{5,7}$ represents a bipartite graph. In the first set, each vertex has $7$ degrees, and in the second set, each vertex has $5$ degrees. This is far beyond the $2$ odd degree vertex limit.}
+\clearpage
+\subsection{$K_{2,7}$}
+\hspace{1cm}\textit{Since $K_{2,7}$ has $2$ vertices with odd degrees, the graph should have an Euler path, but not an Euler circuit. This can be observed inthe below graph where the path can begin on vertex $A$ and end on vertex $B$.}
+\begin{center}
+    \begin{tikzpicture}
+        \node[draw, circle, fill=gray!50] (node1) at (0,0) {1};  
+        \node[draw, circle, fill=gray!50] (node2) at (1,0) {2};
+        \node[draw, circle, fill=gray!50] (node3) at (2,0) {3};
+        \node[draw, circle, fill=gray!50] (node4) at (3,0) {4};
+        \node[draw, circle, fill=gray!50] (node5) at (4,0) {5};
+        \node[draw, circle, fill=gray!50] (node6) at (5,0) {6};
+        \node[draw, circle, fill=gray!50] (node7) at (6,0) {7};
+        \node[draw, circle, fill=gray!50] (nodeA) at (2,1.5) {A};
+        \node[draw, circle, fill=gray!50] (nodeB) at (4,1.5) {B};
+        
+        \draw[->] (nodeA) -- (node1);
+        \draw[->] (node1) -- (nodeB);
+        \draw[->] (nodeB) -- (node2);
+        \draw[->] (node2) -- (nodeA);
+        \draw[->] (nodeA) -- (node3);
+        \draw[->] (node3) -- (nodeB);
+        \draw[->] (nodeB) -- (node4);
+        \draw[->] (node4) -- (nodeA);
+        \draw[->] (nodeA) -- (node5);
+        \draw[->] (node5) -- (nodeB);
+        \draw[->] (nodeB) -- (node6);
+        \draw[->] (node6) -- (nodeA);
+        \draw[->] (nodeA) -- (node7);
+        \draw[->] (node7) -- (nodeB);
+    \end{tikzpicture}
+\end{center}
+\subsection{$C_7$}
+\hspace{1cm}\textit{$C_7$ is cycle graph and therefore contains an Euler circuit. This makes sense because it is a complete graph and every vertex has a degree of $2$.}
+\subsection{$P_7$}
+\hspace{1cm}\textit{$P_7$ is a graph in which the degrees are $(1,2,2,2,2,2,1)$. Thus, the graph will not have an Euler circuit, but has an euler path. This can be observed in the graph below.}
+\begin{center}
+    \begin{tikzpicture}
+        \node[draw, circle, fill=gray!50] (node1) at (0,0) {1};  
+        \node[draw, circle, fill=gray!50] (node2) at (1,1) {2};
+        \node[draw, circle, fill=gray!50] (node3) at (2,0) {3};
+        \node[draw, circle, fill=gray!50] (node4) at (3,1) {4};
+        \node[draw, circle, fill=gray!50] (node5) at (4,0) {5};
+        \node[draw, circle, fill=gray!50] (node6) at (5,1) {6};
+        \node[draw, circle, fill=gray!50] (node7) at (6,0) {7};
+        
+        \draw[->] (node1) -- (node2);
+        \draw[->] (node2) -- (node3);
+        \draw[->] (node3) -- (node4);
+        \draw[->] (node4) -- (node5);
+        \draw[->] (node5) -- (node6);
+        \draw[->] (node6) -- (node7);
+    \end{tikzpicture}
+\end{center}
+\clearpage
+
+% Problem 2:
+
+\section{Consider the following graph:}
+\begin{center}
+    \includegraphics[scale=0.5]{problem2.png}
+\end{center}
+\subsection{Find the Hamilton path. Can the path be extended to a Hamilton cycle?}
+\subsection{Is the graph bipartite? If so, how many vertices are in each "part"?}
+\subsection{Use your answer in part (b) to prove that the graph has no Hamilton cycle.}
+\subsection{Suppose you have a bipartite graph $G$ in which one part has at least two more vertices than the other. Prove that $G$ does not have a Hamilton path.}
+\clearpage
+
+% Problem 3:
+
+\section{Find a matching of the bipartite graphs below or explain why no matching exists. Let the graphs be called $A$, $B$, and $C$ from left to right.}
+\begin{center}
+    \includegraphics[scale=0.33]{problem3.png}
+\end{center}
+\subsection{Graph $A$:}
+\subsection{Graph $B$:}
+\subsection{Graph $C$:}
+\clearpage
+
+% Problem 4:
+
+\section{What is the smallest number of colors you need to color the vertices of $K_{5,7}$?}
+\clearpage
+
+% Problem 5:
+
+\section{Draw a graph with chromatic number $5$. \\ Could your graph be planar? Explain.}
+\clearpage
+
+% Problem 6:
+
+\section{The local Entomology Club has six work \\ groups, each meeting once a month. How many different meeting times must be used to ensure that no member is scheduled to attend two meetings at the same time if the work groups consist of the following members?}
+\begin{center}
+    \includegraphics[scale=0.33]{problem6.png}
+\end{center}
+\clearpage
+
+\end{document}
