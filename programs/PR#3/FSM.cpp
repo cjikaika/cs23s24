@@ -1,3 +1,9 @@
+/* 
+* @file FSM.cpp
+* @author CJ Bridgman-Ford | cj.ikaika@gmail.com
+* CS23 Program #3 | Spring 2024
+*/
+
 #include <iostream>
 #include <fstream>
 #include <map>
@@ -5,9 +11,6 @@
 #include <string>
 #include <tuple>
 #include <vector>
-
-bool NFA();
-bool DFA();
 
 int main(int argc, char*argv[]) {
   if (argc != 2) {
@@ -51,7 +54,7 @@ int main(int argc, char*argv[]) {
     pos2 = -1;
     count = 0;
     for (char c : setupData[i]) {
-      if (c == ' ' ) {
+      if (c == ' ') {
         if (pos1 == -1) {
           pos1 = count;
         } else {
@@ -88,16 +91,67 @@ int main(int argc, char*argv[]) {
   std::cout << std::endl << "Transitions" << " (size = " << transitions.size() << ")"
     << std::endl << std::endl;
 
-
-
-
-
   if (setupData[0] == "deterministic") {
-    std::cout << "DFA | " << setupData[0] << std::endl;
+    int currentState, input;
+    while (getline(std::cin, line)) {
+      currentState = start;
+      pos1 = -1;
+      pos2 = 0;
+      count = 0;
+      for (char c : line) {
+        if (c == ' ') {
+          pos2 = count;
+          input = std::stoi(line.substr(pos1, pos2 - pos1 - 1));
+          currentState = transitions[std::tuple<int, int>{currentState, input}][0];
+          pos1 = pos2;
+        }
+        ++count;
+      }
+      if (accepting[currentState]) {
+        std::cout << "accepted" << std::endl;
+      } else {
+        std::cout << "rejected" << std::endl;
+      }
+    }
   } else if (setupData[0] == "nondeterministic") {
-    std::cout << "NFA | " << setupData[0] << std::endl;
-  }
+    std::vector<int> currentState;
+    int input;
+    bool accepted;
+    while (getline(std::cin, line)) {
+      currentState.push_back(start);
+      pos1 = -1;
+      pos2 = 0;
+      count = 0;
+      accepted = false;
+      for (char c : line) {
+        if (c == ' ') {
+          pos2 = count;
+          input = std::stoi(line.substr(pos1, pos2 - pos1 - 1));
 
+
+          currentState = transitions[std::tuple<int, int>{currentState, input}][0];
+
+          
+          pos1 = pos2;
+        }
+        ++count;
+      }
+      for (int c : currentState) {
+        if (accepting[c]) {
+          accepted = true;
+        }
+      }
+      if (accepted) {
+        std::cout << "accepted" << std::endl;
+      } else {
+        std::cout << "rejected" << std::endl;
+      }
+    }
+  } else {
+    std::cerr << "Please configure either a deterministic or nondeterministic FSM"
+      << std::endl;
+    return 1;
+  }
 
   return 0;
 }
