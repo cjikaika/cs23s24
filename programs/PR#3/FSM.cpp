@@ -40,14 +40,16 @@ int main(int argc, char*argv[]) {
     }
   }
   for (size_t i = 1; i <= spacePos.size(); ++i) {
-    accepting[std::stoi(setupData[4].substr(10, spacePos[i] - spacePos[i - 1] - 1))] = true;
+    accepting[std::stoi(setupData[4].substr(spacePos[i - 1] + 1,
+      spacePos[i] - spacePos[i - 1] - 1))] = true;
   }
 
-  int count = 0, pos1, pos2;
+  int count, pos1, pos2;
   std::map<std::tuple<int, int>, std::vector<int>> transitions;
   for (size_t i = 6; i < setupData.size(); ++i) {
     pos1 = -1;
     pos2 = -1;
+    count = 0;
     for (char c : setupData[i]) {
       if (c == ' ' ) {
         if (pos1 == -1) {
@@ -60,20 +62,42 @@ int main(int argc, char*argv[]) {
     }
     transitions[std::tuple<int, int>{
       std::stoi(setupData[i].substr(0, pos1)),
-      std::stoi(setupData[i].substr(pos1 + 1, pos2 - pos1 - 1))
-      }].push_back(std::stoi(setupData[i].substr(pos2 + 1, setupData[i].length() - pos2 - 1)));
+      std::stoi(setupData[i].substr(pos2 + 1, setupData[i].length() - pos2 - 1))
+      }].push_back(std::stoi(setupData[i].substr(pos1 + 1, pos2 - pos1 - 1)));
+    std::cout <<  transitions[std::tuple<int, int>{
+      std::stoi(setupData[i].substr(0, pos1)),
+      std::stoi(setupData[i].substr(pos2 + 1, setupData[i].length() - pos2 - 1))
+      }][0] << std::endl;
   }
+  std::cout << std::endl;
 
 
   if (setupData[0] == "deterministic") {
-    // build dfsm
+    std::cout << "DFA | " << setupData[0] << std::endl;
   } else if (setupData[0] == "nondeterministic") {
-    // build nfsm
+    std::cout << "NFA | " << setupData[0] << std::endl;
   }
 
-  while(std::getline(std::cin, line)) {
-
+  std::cout << "States: | " << states << std::endl;
+  std::cout << "Start: | " << start << std::endl;
+  std::cout << "Inputs: | " << inputs << std::endl;
+  std::cout << std::endl << "Accepting:" << std::endl;
+  for (int i = 0; i < states; ++i) {
+    std::cout << i << " | " << (accepting[i] ? "accepting" : "normie") << std::endl;
   }
+  std::cout << std::endl << "Transitions" << " (size = " << transitions.size() << ")"
+    << std::endl << std::endl;
+
+
+
+
+
+  if (setupData[0] == "deterministic") {
+    std::cout << "DFA | " << setupData[0] << std::endl;
+  } else if (setupData[0] == "nondeterministic") {
+    std::cout << "NFA | " << setupData[0] << std::endl;
+  }
+
 
   return 0;
 }
