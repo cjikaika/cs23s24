@@ -114,7 +114,7 @@ int main(int argc, char*argv[]) {
       }
     }
   } else if (setupData[0] == "nondeterministic") {
-    std::vector<int> currentState;
+    std::vector<int> currentState, nextState;
     int input;
     bool accepted;
     while (getline(std::cin, line)) {
@@ -127,11 +127,14 @@ int main(int argc, char*argv[]) {
         if (c == ' ') {
           pos2 = count;
           input = std::stoi(line.substr(pos1, pos2 - pos1 - 1));
-
-
-          currentState = transitions[std::tuple<int, int>{currentState, input}][0];
-
-          
+          for (int i : currentState) {
+            for (int c = 0; c < transitions[std::tuple<int, int>{currentState[i], input}].size(); ++i) {
+              nextState.push_back(transitions[std::tuple<int, int>{currentState[i], input}][c]);
+            }
+          }
+          currentState.clear();
+          currentState = nextState;
+          nextState.clear();
           pos1 = pos2;
         }
         ++count;

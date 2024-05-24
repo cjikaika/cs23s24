@@ -1,0 +1,92 @@
+% Preamble:
+\documentclass{article}
+
+% Packages:
+\usepackage{fancyhdr}
+
+% Title Page Information:
+\title{CS23 Assignment One (Sets)}
+\author{CJ Bridgman-Ford \\ cj.ikaika@gmail.com}
+\date{February 15, 2024}
+
+% Make subsections lettered:
+\renewcommand{\thesubsection}{\alph{subsection}.}
+
+% fancyhdr Page Styling:
+\newcommand{\pagenumber}{\thepage\quad}
+\newcommand{\authorname}{CJ Bridgman-Ford}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead{}
+\fancyfoot[L]{\authorname}
+\fancyfoot[C]{}
+\fancyfoot[R]{\pagenumber}
+
+% End of Preamble.
+
+% Start of document:
+\begin{document}
+
+% Title Page:
+\maketitle
+\thispagestyle{empty}
+
+
+\clearpage
+% Page 1:
+\pagenumbering{arabic}
+\section{Let A = \{1,2,4\} and B = \{2,3,4,5\}.
+Find each of the following sets:}
+\subsection{$A\cup B$.}1
+\hspace{1cm}{This operation creates a set containing every element of $A$ and every element of $B$:
+\\\\$C = \{1,2,3,4,5\}.$}
+\subsection{$A\cap B$.}
+\hspace{1cm}{This operation creates a set containing  elements only found in both $A$ and $B$:
+\\\\$C = \{2,4\}.$}
+\subsection{$A-B$.}
+\hspace{1cm}{This operation creates a set containing the elements of $A$ that do not exist in $B$:
+\\\\$C = \{1\}.$}
+\subsection{$B-A$.}
+\hspace{1cm}{This operation creates a set containing the elements in $B$ that do not exist in $A$:
+\\\\$C = \{3,5\}.$}
+
+\clearpage
+% Page 2:
+\section{Find the following cardinalities:}
+\subsection{$|A|$ when $A = \{4,5,6,...,32\}$.}
+\hspace{1cm}{The cardinality of the set is the number of integers over $[4,32]$. Note: the square brackets indicate that this range is inclusive. Therefore, we can calculate $|A|$ by doing the operation $(b-a+1)$, where $[a,b]$ represents $[4,32]$:
+\\\\$|A| = 32-4+1 = 29.$}
+\subsection{$|A|$ when $A = \{x\epsilon Z | -2 < Z < 20\}$.}
+\hspace{1cm}{The cardinality of the set is the number of integers over $(-2,20)$. Note: the parentheses indicate that this range is not inclusive ("exclusive"). Therefore, we can $|A|$ by doing the operation $(b-a-1)$, where $(a,b)$ represents  $(-2,20)$:
+\\\\$|A| = 20-(-2)-1 = 21$.}
+
+\clearpage
+% Page 3:
+\section{Find a set of largest possible size that is a subset of both $\{1,2,3,4,5\}$ and $\{2,4,6,8,10\}$.}
+\hspace{1cm}{We will call these two sets $A$ and $B$, respectively. If $C$ is a subset of both $A$ and $B$, then we know that $A\cap B = C$. Therefore,
+\\\\$C = \{2,4\}.$}
+
+\clearpage
+% Page 4:
+\section{Find a set of smallest possible size that has both $\{1,2,3,4,5\}$ and $\{2,4,6,8,10\}$ as subsets.}
+\hspace{1cm}{We will call these two sets $A$ and $B$, respectively. If $C$ contains of  $A$ and $B$ as subsets, then we know that $A\cup B = C$. Therefore,
+\\\\$C = \{1,2,3,4,5,6,8,10\}.$}
+
+\clearpage
+% Page 5:
+\section{Let $A = \{a,b,c\}$. Find $P(A).$}
+\hspace{1cm}{A power set contains elements of a set, as well as, all of their possible combinations (the empty set included). Due to this property, $|P(A)| = 2^{|A|}$. Therefore, 
+\\\\$P(A) = \{\{\},\{a\},\{b\},\{c\}\},\{a,b\},\{a,c\},\{b,c\},\{a,b,c\}\}$.}
+
+\clearpage
+% Page 6:
+\section{Consider the sets $A$ and $B$, where $A = \{3,|B|\}$ and $B = \{1,|A|,|B|\}$. What are the sets?}
+\hspace{1cm}{Sets $A$ and $B$ reference each other's cardinality, which could make it difficult to determine. However, in this case, we can simply count the number of elements in their explicit set notation. This shows us that $|A| = 2$ and $|B| = 3$. Therefore,
+\\\\$A = \{3,3\}.$
+\\\\$B = \{1,2,3\}.$
+}
+\clearpage
+
+% End document:
+\end{document}

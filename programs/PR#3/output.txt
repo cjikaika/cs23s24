@@ -1,0 +1,28 @@
+1
+0
+2
+1
+3
+5
+4
+2
+4
+3
+5
+5
+
+DFA | deterministic
+States: | 6
+Start: | 0
+Inputs: | 2
+
+Accepting:
+0 | normie
+1 | accepting
+2 | accepting
+3 | accepting
+4 | normie
+5 | normie
+
+Transitions (size = 12)
+
