@@ -1,0 +1,10 @@
+deterministic
+states 2
+inputs 2
+start 0
+accepting 1
+transitions
+0 0 0
+0 1 1
+1 1 0
+1 1 1

@@ -98,11 +98,19 @@ int main(int argc, char*argv[]) {
       pos1 = -1;
       pos2 = 0;
       count = 0;
+      line += " ";
       for (char c : line) {
         if (c == ' ') {
           pos2 = count;
-          input = std::stoi(line.substr(pos1, pos2 - pos1 - 1));
-          currentState = transitions[std::tuple<int, int>{currentState, input}][0];
+          if (pos2 - pos1 - 1 > 0) {
+            input = std::stoi(line.substr(pos1 + 1, pos2 - pos1 - 1));
+            if (input >= 0 && input < inputs) {
+              currentState = transitions[std::tuple<int, int>{currentState, input}][0];
+            } else {
+              std::cerr << "Input " << input << " is out of range | ";
+              break;
+            }
+          }
           pos1 = pos2;
         }
         ++count;
@@ -118,7 +126,13 @@ int main(int argc, char*argv[]) {
     int input;
     bool accepted;
     while (getline(std::cin, line)) {
-      currentState.push_back(start);
+      if (transitions[std::tuple<int, int>{start, -1}].size() > 0) {
+        for (int i : transitions[std::tuple<int, int>{start, -1}]) {
+          currentState.push_back(i);
+        }
+      } else {
+        currentState.push_back(start);
+      }
       pos1 = -1;
       pos2 = 0;
       count = 0;
@@ -126,15 +140,32 @@ int main(int argc, char*argv[]) {
       for (char c : line) {
         if (c == ' ') {
           pos2 = count;
-          input = std::stoi(line.substr(pos1, pos2 - pos1 - 1));
-          for (int i : currentState) {
-            for (int c = 0; c < transitions[std::tuple<int, int>{currentState[i], input}].size(); ++i) {
-              nextState.push_back(transitions[std::tuple<int, int>{currentState[i], input}][c]);
+          if (pos2 - pos1 - 1 > 0) {
+            input = std::stoi(line.substr(pos1 + 1, pos2 - pos1 - 1));
+            if (input >= 0 && input < inputs) {
+              for (int i : currentState) {
+                for (size_t j = 0; j < transitions[std::tuple<int, int>{currentState[i], input}].size(); ++i) {
+                  nextState.push_back(transitions[std::tuple<int, int>{currentState[i], input}][j]);
+                }
+              }
+              currentState = nextState;
+              nextState.clear();
+              for (int i : currentState) {
+                if (transitions[std::tuple<int, int>{i, -1}].size() > 0) {
+                  for (int j : transitions[std::tuple<int, int>{i, -1}]) {
+                    nextState.push_back(j);
+                  }
+                } else {
+                  nextState.push_back(i);
+                }
+              }
+              currentState = nextState;
+              nextState.clear();
+            } else {
+              std::cerr << "Input " << input << " is out of range | ";
+              break;
             }
           }
-          currentState.clear();
-          currentState = nextState;
-          nextState.clear();
           pos1 = pos2;
         }
         ++count;
@@ -151,7 +182,7 @@ int main(int argc, char*argv[]) {
       }
     }
   } else {
-    std::cerr << "Please configure either a deterministic or nondeterministic FSM"
+    std::cerr << "Please configure either a deterministic or nondeterministic FSM."
       << std::endl;
     return 1;
   }
