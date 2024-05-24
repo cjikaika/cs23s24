@@ -67,29 +67,7 @@ int main(int argc, char*argv[]) {
       std::stoi(setupData[i].substr(0, pos1)),
       std::stoi(setupData[i].substr(pos2 + 1, setupData[i].length() - pos2 - 1))
       }].push_back(std::stoi(setupData[i].substr(pos1 + 1, pos2 - pos1 - 1)));
-    std::cout <<  transitions[std::tuple<int, int>{
-      std::stoi(setupData[i].substr(0, pos1)),
-      std::stoi(setupData[i].substr(pos2 + 1, setupData[i].length() - pos2 - 1))
-      }][0] << std::endl;
   }
-  std::cout << std::endl;
-
-
-  if (setupData[0] == "deterministic") {
-    std::cout << "DFA | " << setupData[0] << std::endl;
-  } else if (setupData[0] == "nondeterministic") {
-    std::cout << "NFA | " << setupData[0] << std::endl;
-  }
-
-  std::cout << "States: | " << states << std::endl;
-  std::cout << "Start: | " << start << std::endl;
-  std::cout << "Inputs: | " << inputs << std::endl;
-  std::cout << std::endl << "Accepting:" << std::endl;
-  for (int i = 0; i < states; ++i) {
-    std::cout << i << " | " << (accepting[i] ? "accepting" : "normie") << std::endl;
-  }
-  std::cout << std::endl << "Transitions" << " (size = " << transitions.size() << ")"
-    << std::endl << std::endl;
 
   if (setupData[0] == "deterministic") {
     int currentState, input;
@@ -137,6 +115,7 @@ int main(int argc, char*argv[]) {
       pos2 = 0;
       count = 0;
       accepted = false;
+      line += " ";
       for (char c : line) {
         if (c == ' ') {
           pos2 = count;
@@ -144,7 +123,7 @@ int main(int argc, char*argv[]) {
             input = std::stoi(line.substr(pos1 + 1, pos2 - pos1 - 1));
             if (input >= 0 && input < inputs) {
               for (int i : currentState) {
-                for (size_t j = 0; j < transitions[std::tuple<int, int>{currentState[i], input}].size(); ++i) {
+                for (size_t j = 0; j < transitions[std::tuple<int, int>{currentState[i], input}].size(); ++j) {
                   nextState.push_back(transitions[std::tuple<int, int>{currentState[i], input}][j]);
                 }
               }
